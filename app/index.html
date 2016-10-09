@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="dsgApp">
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+	<script src="assets/js/loading-bar.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/app.js"></script>
+	<link rel="stylesheet" href="assets/css/loading-bar.css">
+	<base href="/">
+</head>
+<body>
+	<main>
+		<ng-view autoscroll="true"></ng-view>
+	</main>
+	<aside>
+		<ol>
+			<li><a href="/">Home</a></li>
+			<li><span class="title">Dynamic Pages</span>
+				<ol>
+					<li><a href="/sample-dynamic-page">Sample Dynamic Page</a></li>
+					<li><a href="/sample-dynamic-page-b">Sample Dynamic Page #2</a></li>
+					<li><a href="/sample-dynamic-page-c">Sample Dynamic Page #3</a></li>
+				</ol>
+			</li>
+			<li><span class="title">Static Pages</span>
+				<ol>
+					<li><a href="/sample-static-page">Sample Static Page</a></li>
+				</ol>
+			</li>
+		</ol>
+	</aside>
+</body>
+</html>
