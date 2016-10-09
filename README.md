@@ -11,9 +11,9 @@ A basic introduction to Angular, including routes, controllers, constants, HTML5
 
 ## Server Support
 
-In order to get full support on fancy pushState URLs, we need to a server side rewrite is necessary. I use an Apache server, so here is the wizardry for that:
+To get full support on pushState URLs, a server side rewrite is necessary. I use an Apache server, so here's the wizardry for that:
 
-** Local **
+**Local**
 
 ~~~~
 <VirtualHost *:80 />
@@ -29,7 +29,7 @@ In order to get full support on fancy pushState URLs, we need to a server side r
 </VirtualHost>
 ~~~~
 
-** Remote **
+**Remote**
 
 ~~~~
 <IfModule mod_rewrite.c>
