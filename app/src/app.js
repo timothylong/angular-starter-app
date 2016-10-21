@@ -15,17 +15,17 @@ dsgApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
 
         .when('/', {
-            templateUrl : 'partials/home.html',
+            templateUrl : 'views/home.html',
             controller  : 'projectController'
         })
 
         .when('/sample-static-page', {
-            templateUrl : 'partials/static.html',
+            templateUrl : 'views/static.html',
             controller  : 'staticController'
         })
 
         .when('/:site', {
-            templateUrl : 'partials/dynamic.html',
+            templateUrl : 'views/dynamic.html',
             controller  : 'dynamicController'
         })
 
