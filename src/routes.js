@@ -1,5 +1,5 @@
 // Route config
-dsgApp.config(function($routeProvider, $locationProvider) {
+starterApp.config(function($routeProvider, $locationProvider) {
     
     // HTML5 history api
     $locationProvider.html5Mode(true);

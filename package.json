@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-    "gulp-postcss": "latest",
-    "gulp-sourcemaps": "latest",
-    "autoprefixer": "latest"
-  }
-}

@@ -1,13 +1,13 @@
-// Create module titled dsgApp, add dependencies
-var dsgApp = angular.module('dsgApp', ['ngRoute','ngAnimate','cfp.loadingBar']);
+// Create module titled starterApp, add dependencies
+var starterApp = angular.module('starterApp', ['ngRoute','ngAnimate','cfp.loadingBar']);
 
 // Disable loading bar spinner 
-dsgApp.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+starterApp.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
 }]);
 
 // Route config
-dsgApp.config(function($routeProvider, $locationProvider) {
+starterApp.config(function($routeProvider, $locationProvider) {
     
     // HTML5 history api
     $locationProvider.html5Mode(true);
@@ -35,7 +35,7 @@ dsgApp.config(function($routeProvider, $locationProvider) {
 
 });
 
-dsgApp.constant('siteConfig',{
+starterApp.constant('siteConfig',{
     'sample-dynamic-page' : {
         'title' : 'Sample Page',        
         'description' : 'Sample Page Description',
@@ -116,7 +116,7 @@ dsgApp.constant('siteConfig',{
     },
 })
 
-dsgApp.controller('dynamicController', ['$scope','$routeParams', 'siteConfig', 'cfpLoadingBar', function($scope, $routeParams, siteConfig, cfpLoadingBar) {
+starterApp.controller('dynamicController', ['$scope','$routeParams', 'siteConfig', 'cfpLoadingBar', function($scope, $routeParams, siteConfig, cfpLoadingBar) {
 
     console.log($routeParams.site);
 
@@ -146,7 +146,7 @@ dsgApp.controller('dynamicController', ['$scope','$routeParams', 'siteConfig', '
 
 }]);
 
-dsgApp.controller('staticController', function($scope, cfpLoadingBar) {
+starterApp.controller('staticController', function($scope, cfpLoadingBar) {
 
     // Start loader
     $scope.start = function() {
@@ -168,7 +168,7 @@ dsgApp.controller('staticController', function($scope, cfpLoadingBar) {
 
 });
 
-dsgApp.run(function() {
+starterApp.run(function() {
 
     // Additional DOM-level scripts (jQuery, etc...)
 
