@@ -20,12 +20,12 @@ dsgApp.config(function($routeProvider, $locationProvider) {
         })
 
         .when('/sample-static-page', {
-            templateUrl : 'views/static.html',
+            templateUrl : 'components/static/static.html',
             controller  : 'staticController'
         })
 
         .when('/:site', {
-            templateUrl : 'views/dynamic.html',
+            templateUrl : 'components/dynamic/dynamic.html',
             controller  : 'dynamicController'
         })
 
