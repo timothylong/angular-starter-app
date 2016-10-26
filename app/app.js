@@ -20,12 +20,12 @@ starterApp.config(function($routeProvider, $locationProvider) {
         })
 
         .when('/sample-static-page', {
-            templateUrl : 'components/static/static.html',
+            templateUrl : 'views/components/static/static.html',
             controller  : 'staticController'
         })
 
         .when('/:site', {
-            templateUrl : 'components/dynamic/dynamic.html',
+            templateUrl : 'views/components/dynamic/dynamic.html',
             controller  : 'dynamicController'
         })
 

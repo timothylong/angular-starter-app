@@ -3,9 +3,6 @@
 #loading-bar {
 	pointer-events: none;
 	-webkit-pointer-events: none;
-	-webkit-transition: 350ms linear all;
-	-moz-transition: 350ms linear all;
-	-o-transition: 350ms linear all;
 	transition: 350ms linear all;
 	z-index: 10002;
     position: fixed;
@@ -21,9 +18,6 @@
 	visibility: visible;
 }
 #loading-bar .bar {
-	-webkit-transition: width 350ms;
-	-moz-transition: width 350ms;
-	-o-transition: width 350ms;
 	transition: width 350ms;
 	background: #666;
 	position: fixed;

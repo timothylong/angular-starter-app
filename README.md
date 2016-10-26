@@ -1,12 +1,11 @@
 # Angular Starter
 
-A basic introduction to Angular, including routes, controllers, constants, HTML5 History API, page transitions and a dynamic loading bar. (Yes, the last two were self-indulgent, but hey, I'm a designer.)
+A basic introduction to Angular, including routes, controllers, constants, HTML5 History API, and page transitions.
 
 ## Goals
 
 - Improve overall file and application organization
-- Set up a build system (probably Gulp, but maybe Webpack, because apparently that's what people use in 2016)
-- Write clearer documentation so that at least I remember what things are doing when I look at this again in six months
+- Clearer documentation
 - Probably even more things, but TBD
 
 ## Server Support
