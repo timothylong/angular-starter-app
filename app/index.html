@@ -8,21 +8,22 @@
 </head>
 <body>
 	<main>
-		<ng-view autoscroll="true"></ng-view>
+		<route-loader></route-loader>
+		<ng-view class="fade" autoscroll="true"></ng-view>
 	</main>
 	<aside>
 		<ol>
 			<li><a href="/">Home</a></li>
 			<li><span class="title">Dynamic Pages</span>
 				<ol>
-					<li><a href="/sample-dynamic-page">Sample Dynamic Page</a></li>
-					<li><a href="/sample-dynamic-page-b">Sample Dynamic Page #2</a></li>
-					<li><a href="/sample-dynamic-page-c">Sample Dynamic Page #3</a></li>
+					<li><a href="/work-item-a">Work Item #A</a></li>
+					<li><a href="/work-item-b">Work Item #B</a></li>
+					<li><a href="/work-item-c">Work Item #C</a></li>
 				</ol>
 			</li>
 			<li><span class="title">Static Pages</span>
 				<ol>
-					<li><a href="/sample-static-page">Sample Static Page</a></li>
+					<li><a href="/about">About</a></li>
 				</ol>
 			</li>
 		</ol>

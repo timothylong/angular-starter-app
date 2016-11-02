@@ -1,10 +1,17 @@
 <header class="primary">
-	<h1>Home</h1>
+	<h1>{{title}}</h1>
 </header>
 <section class="content">
 	<article>
 		<h2>Title</h2>
-		<p>Suspendisse nec neque nibh. Aenean congue eget odio feugiat pellentesque. Ut maximus ante non diam congue porta. Donec facilisis pulvinar massa eget tempor.</p>
+		<ul>
+		    <li ng-repeat="color in colors">
+		        <h3>{{color.title}}</h3>
+		        {{color.hex}}<br>
+		        {{color.rgb}}
+		    </li>
+		</ul>
+		<p>{{description}}</p>
 		<p>Donec posuere justo quis quam dignissim, elementum iaculis velit congue. Sed quis nulla sit amet felis luctus ullamcorper ac ut nunc.</p>
 		<p>Suspendisse nec neque nibh. Aenean congue eget odio feugiat pellentesque. Ut maximus ante non diam congue porta. Donec facilisis pulvinar massa eget tempor.</p>
 		<h2>Title</h2>

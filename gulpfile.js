@@ -8,18 +8,18 @@ var autoprefixer = require('autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 
 // Concatenate & Minify JS
-gulp.task('scripts', function() {  
+gulp.task('scripts', function() {
     return gulp.src(
         [
-            'app/assets/js/vendor/angular.min.js',
-            'app/assets/js/vendor/angular-route.min.js',
-            'app/assets/js/vendor/angular-animate.min.js',
+            'app/assets/js/vendor/angular/angular.min.js',
+            'app/assets/js/vendor/angular/angular-route.min.js',
+            'app/assets/js/vendor/angular/angular-animate.min.js',
             'app/assets/js/lib/loading-bar.js'
         ])
     	.pipe(sourcemaps.init())
         .pipe(concat('scripts.js'))
+        .pipe(sourcemaps.write())
         .pipe(uglify())
-        // .pipe(rename('scripts.min.js'))
         .pipe(gulp.dest('app'));
 });
 
@@ -31,7 +31,7 @@ gulp.task('autoprefixer', function() {
 
 // Minify CSS
 gulp.task('css', function() {
-    return gulp.src('app/assets/css/*.css')
+    return gulp.src('app/assets/css/style.css')
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('app/assets/css'));

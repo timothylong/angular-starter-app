@@ -1,14 +1,14 @@
 // Create module titled starterApp, add dependencies
 var starterApp = angular.module('starterApp', ['ngRoute','ngAnimate','cfp.loadingBar']);
 
-// Disable loading bar spinner 
+// Disable loading bar spinner
 starterApp.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = false;
 }]);
 
 // Route config
 starterApp.config(function($routeProvider, $locationProvider) {
-    
+
     // HTML5 history api
     $locationProvider.html5Mode(true);
 
@@ -16,17 +16,17 @@ starterApp.config(function($routeProvider, $locationProvider) {
 
         .when('/', {
             templateUrl : 'views/home.html',
-            controller  : 'projectController'
-        })
-
-        .when('/sample-static-page', {
-            templateUrl : 'views/components/static/static.html',
-            controller  : 'staticController'
+            controller  : 'homeController'
         })
 
         .when('/:site', {
-            templateUrl : 'views/components/dynamic/dynamic.html',
-            controller  : 'dynamicController'
+            templateUrl : 'views/components/work/work.html',
+            controller  : 'workController'
+        })
+
+        .when('/about', {
+            templateUrl : 'views/components/static/static.html',
+            controller  : 'aboutController'
         })
 
         .otherwise({
@@ -36,9 +36,9 @@ starterApp.config(function($routeProvider, $locationProvider) {
 });
 
 starterApp.constant('siteConfig',{
-    'sample-dynamic-page' : {
-        'title' : 'Sample Page',        
-        'description' : 'Sample Page Description',
+    'work-item-a' : {
+        'title' : 'Work Item A',
+        'description' : 'Work Item A Description',
         'colors' : [
             {
                 'title' : 'Primary',
@@ -67,9 +67,9 @@ starterApp.constant('siteConfig',{
             }
         ]
     },
-    'sample-dynamic-page-b' : {
-        'title' : 'Sample Page B',        
-        'description' : 'Sample Page B Description',
+    'work-item-b' : {
+        'title' : 'Work Item B',
+        'description' : 'Work Item B Description',
         'colors' : [
             {
                 'title' : 'Primary',
@@ -88,9 +88,9 @@ starterApp.constant('siteConfig',{
             }
         ]
     },
-    'sample-dynamic-page-c' : {
-        'title' : 'Sample Page C',        
-        'description' : 'Sample Page C Description',
+    'work-item-c' : {
+        'title' : 'Work Item C',
+        'description' : 'Work Item C Description',
         'colors' : [
             {
                 'title' : 'Primary',
@@ -116,7 +116,29 @@ starterApp.constant('siteConfig',{
     },
 })
 
-starterApp.controller('dynamicController', ['$scope','$routeParams', 'siteConfig', 'cfpLoadingBar', function($scope, $routeParams, siteConfig, cfpLoadingBar) {
+starterApp.controller('homeController', function($scope, cfpLoadingBar) {
+
+    // Start loader
+    $scope.start = function() {
+        cfpLoadingBar.start();
+    };
+
+    // Complete loader
+    $scope.complete = function () {
+        cfpLoadingBar.complete();
+    };
+
+    // Initialize scope
+    $scope.start();
+
+    // Complete loader when DOM is ready
+    angular.element(document).ready(function () {
+        $scope.complete();
+    });
+
+});
+
+starterApp.controller('workController', ['$scope','$routeParams', 'siteConfig', 'cfpLoadingBar', function($scope, $routeParams, siteConfig, cfpLoadingBar) {
 
     console.log($routeParams.site);
 
@@ -124,14 +146,14 @@ starterApp.controller('dynamicController', ['$scope','$routeParams', 'siteConfig
 
     // Start loader
     $scope.start = function() {
-        cfpLoadingBar.start();    
+        cfpLoadingBar.start();
     };
-    
+
     // Complete loader
     $scope.complete = function () {
         cfpLoadingBar.complete();
     };
-    
+
     // Initialize scope
     $scope.start();
 
@@ -146,18 +168,18 @@ starterApp.controller('dynamicController', ['$scope','$routeParams', 'siteConfig
 
 }]);
 
-starterApp.controller('staticController', function($scope, cfpLoadingBar) {
+starterApp.controller('aboutController', function($scope, cfpLoadingBar) {
 
     // Start loader
     $scope.start = function() {
-        cfpLoadingBar.start();    
+        cfpLoadingBar.start();
     };
-    
+
     // Complete loader
     $scope.complete = function () {
         cfpLoadingBar.complete();
     };
-    
+
     // Initialize scope
     $scope.start();
 
@@ -167,6 +189,24 @@ starterApp.controller('staticController', function($scope, cfpLoadingBar) {
     });
 
 });
+
+// View Loading Directive
+
+// starterApp.directive("routeLoader", function($rootScope, $timeout) {
+//     return {
+//         template : "<div class='loader' ng-if='isRouteLoading'><img src='assets/images/icon.svg'>",
+//         replace: "true",
+//         link: function(scope, elem, attrs) {
+//             scope.isRouteLoading = false;
+//             $rootScope.$on('$routeChangeStart', function(){
+//                 scope.isRouteLoading = true;
+//             });
+//             $rootScope.$on('$routeChangeSuccess', function(){
+//                     scope.isRouteLoading = false;
+//             });
+//         }
+//     }
+// });
 
 starterApp.run(function() {
 
