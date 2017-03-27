@@ -1,4 +1,4 @@
-# Angular Starter
+# Angular Starter Kit
 
 A basic introduction to Angular, including routes, controllers, constants, HTML5 History API, and page transitions.
 
