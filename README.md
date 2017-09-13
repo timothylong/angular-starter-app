@@ -1,6 +1,6 @@
-# Angular Starter Kit
+# AngularJS Starter Kit
 
-A basic introduction to Angular, including routes, controllers, constants, HTML5 History API, and page transitions.
+A basic introduction to AngularJS, including routes, controllers, constants, HTML5 History API, and page transitions.
 
 ## Goals
 
